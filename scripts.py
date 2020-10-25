@@ -45,6 +45,8 @@ def is_leap(year):
             leap = True
 
     return leap
+year = int(input())
+print(is_leap(year))
 
 #Print Function
 n = int(input())
@@ -144,16 +146,28 @@ def swap_case(s):
             stringa = stringa + elem.lower()
 
     return stringa
+if __name__ == '__main__':
+s = input()
+result = swap_case(s)
+print(result)
 
 #String Split and Join
 def split_and_join(line):
     lista=line.split()
     result="-".join(lista)
     return result
+if __name__ == '__main__':
+line = input()
+result = split_and_join(line)
+print(result)
 
 #What's Your Name?
 def print_full_name(a, b):
     print("Hello "+a+" "+b+"! You just delved into python.")
+f __name__ == '__main__':
+first_name = input()
+last_name = input()
+print_full_name(first_name, last_name)
 
 #Mutations
 def mutate_string(string, position, character):
@@ -161,6 +175,11 @@ def mutate_string(string, position, character):
     lista[position] = character
 
     return ("").join(lista)
+if __name__ == '__main__':
+s = input()
+i, c = input().split()
+s_new = mutate_string(s, int(i), c)
+print(s_new)
 
 #Find a string
 def count_substring(string, sub_string):
@@ -177,6 +196,12 @@ def count_substring(string, sub_string):
             i = i + 1
 
     return count
+if __name__ == '__main__':
+string = input().strip()
+sub_string = input().strip()
+
+count = count_substring(string, sub_string)
+print(count)
 
 #String Validators
 s = input()
@@ -215,6 +240,10 @@ def wrap(string, max_width):
             result = result + string[i]
             i = i + 1
     return result
+if __name__ == '__main__':
+string, max_width = input(), int(input())
+result = wrap(string, max_width)
+print(result)
 
 #Designer Door Mat
 n,m= map(int,input().split())
@@ -234,6 +263,9 @@ def print_formatted(number):
         hexadecimal=hex(i).capitalize()
         final=str(i) +space+str(octal).replace("0o",'')+space+str(hexadecimal).replace("0x",'')+space+str(binary).replace("0b",'')
         print(final)
+if __name__ == '__main__':
+n = int(input())
+print_formatted(n)
 
 #Capitalize!
 def solve(s):
@@ -243,6 +275,16 @@ def solve(s):
     for elem in lista:
         new_list.append(elem.capitalize())
     return (" ").join(new_list)
+if __name__ == '__main__':
+fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+s = input()
+
+result = solve(s)
+
+fptr.write(result + '\n')
+
+fptr.close()
 
 #The Minion Game
 def minion_game(string):
@@ -262,6 +304,9 @@ def minion_game(string):
         print("Stuart " + str(stuart))
     else:
         print("Draw")
+if __name__ == '__main__':
+s = input()
+minion_game(s)
 
 #Merge the Tools
 def merge_the_tools(string, k):
@@ -282,11 +327,19 @@ def merge_the_tools(string, k):
 
     for elem in lista:
         print(elem)
+if __name__ == '__main__':
+string, k = input(), int(input())
+merge_the_tools(string, k)
 
 #Introduction to Sets
 def average(array):
     ins= set(array)
     return sum(ins)/len(ins)
+if __name__ == '__main__':
+n = int(input())
+arr = list(map(int, input().split()))
+result = average(arr)
+print(result)
 
 #Symmetric Difference
 n=int(input())
@@ -583,6 +636,23 @@ def time_delta(t1, t2):
     date_2 = datetime.strptime(t2, '%a %d %b %Y %H:%M:%S %z')
     return str(int(abs((date_1 - date_2).total_seconds())))
 
+if __name__ == '__main__':
+fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+t = int(input())
+
+for t_itr in range(t):
+    t1 = input()
+
+    t2 = input()
+
+    delta = time_delta(t1, t2)
+
+    fptr.write(delta + '\n')
+
+fptr.close()
+
+
 #Exceptions
 for i in range(int(input())):
 
@@ -802,7 +872,7 @@ for i in range(n):
     ht=input()
     parser.feed(ht)
 
-#Validating UID helped
+#Validating UID
 import re
 n=int(input())
 for i in range(n):
